@@ -16,10 +16,10 @@ describe('default parameters - types and syntax - 2', () => {
                 zakk instanceof Function
             ];
 
-        expect(typeof zakk).toEqual( /* YOUR ANSWER HERE */ );
+        expect(typeof zakk).toEqual('object');
 
         /* SWAP THE INDEX 99 TO THE CORRECT VALUE */
-        expect(instances[99]).toEqual(true);
+        expect(instances[5]).toEqual(true);
     });
 })
 
@@ -29,8 +29,20 @@ describe('creating own object with properties and methods - types and syntax - 2
     beforeEach(() => {
         // define the car object (properties and methods) to pass the following tests
         car = {
+            name: 'BMW',
+            model: 'BMW',
+            color: "orange",
+            engineRunning:false,
             startEngine() {
-                return;
+                this.engineRunning= true;
+            },
+
+            stopEngine() {
+                this.engineRunning = false;
+            },
+
+            changeColor(color) {
+                this.color = color;
             }
         };
     })
@@ -90,6 +102,19 @@ describe('creating own object with properties and methods - types and syntax - 2
 
         let newCar = Object.create(car);
         /* add properties and methods to the newCar object */
+
+        newCar = {
+            climatronicOn: false,
+
+            startClimatronic(){
+                this.climatronicOn = true;
+            },
+
+            stopClimatronic(){
+                this.climatronicOn = false;
+            }
+
+        }
 
         const spyOnStartClimatronic = jest.spyOn(newCar, "startClimatronic");
         const spyOnStopClimatronic = jest.spyOn(newCar, "stopClimatronic");

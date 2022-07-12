@@ -1,1 +1,5 @@
-# types-and-syntax-2
+Komendy:
+
+`npm install`  
+
+`npm test`

@@ -243,5 +243,6 @@ describe('creating functions with constructors - types and syntax - 2', () => {
         car.changeColor("orange");
         expect(spyOnChangeColor).toHaveBeenCalled();
         expect(car.color).toEqual( 'orange');
+        
     });
 })
